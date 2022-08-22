@@ -3,15 +3,14 @@ import { galleryItems } from './gallery-items.js';
 
 
 
-// 1. Створення і рендер розмітки
-
+// 1. Створення і рендер розмітки__________________
 
 const galleryContainer = document.querySelector('.gallery');
 const galleryImg = createGalleryImg(galleryItems);
 
 galleryContainer.insertAdjacentHTML("beforeend", galleryImg);
 
-// console.log(createGalleryImg(galleryItems));
+console.log(createGalleryImg(galleryItems));
 
 function createGalleryImg(galleryItems) {
     return galleryItems.map(({preview, original, description}) => {
@@ -30,7 +29,7 @@ function createGalleryImg(galleryItems) {
     }).join("");
 };
 
-// Делегування і отримання url
+// Делегування і отримання url_______________
 
 galleryContainer.addEventListener('click', onImageClick);
 
@@ -44,17 +43,19 @@ function onImageClick(e) {
   const imgEl = document.querySelector('.gallery__link');
   imgEl.href = e.target.dataset.source;
 
-//   Створює екземпляр  basicLightbox.
+ // //   Створює екземпляр  basicLightbox_______________
 
   const instance = basicLightbox.create(`
     <img class="modal__image" src="assets/images/image.png" width="800" height="600">
     `);
 
-    instance.show(() => console.log('lightbox now visible'));
+    instance.show();
 
   const modalEl = document.querySelector('.modal__image');
   modalEl.src = e.target.dataset.source;
-//   console.log(modal.src);
+ //   console.log(modal.src);
+
+  console.log(modalEl);
 
 }
 
