@@ -11,7 +11,7 @@ const galleryImg = createGalleryImg(galleryItems);
 
 galleryContainer.insertAdjacentHTML("beforeend", galleryImg);
 
-console.log(createGalleryImg(galleryItems));
+// console.log(createGalleryImg(galleryItems));
 
 function createGalleryImg(galleryItems) {
     return galleryItems.map(({preview, original, description}) => {
@@ -28,6 +28,47 @@ function createGalleryImg(galleryItems) {
         </div>
       `;
     }).join("");
-   
 };
+
+// Делегування і отримання url
+
+galleryContainer.addEventListener('click', onImageClick);
+
+function onImageClick(e) {
+ const isImg = e.target.classList.contains('gallery__image');
+ e.preventDefault();
+  if(!isImg) {
+    return;
+  }
+
+  const imgEl = document.querySelector('.gallery__link');
+  imgEl.href = e.target.dataset.source;
+
+//   Створює екземпляр  basicLightbox.
+
+  const instance = basicLightbox.create(`
+    <img class="modal__image" src="assets/images/image.png" width="800" height="600">
+    `);
+
+    instance.show(() => console.log('lightbox now visible'));
+
+  const modalEl = document.querySelector('.modal__image');
+  modalEl.src = e.target.dataset.source;
+//   console.log(modal.src);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
