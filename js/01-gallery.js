@@ -51,6 +51,7 @@ function onImageClick(e) {
     `);
 
   instance.show();
+  
 
   const modalEl = document.querySelector('.modal__image');
   modalEl.src = e.target.dataset.source;
