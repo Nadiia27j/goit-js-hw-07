@@ -39,6 +39,7 @@ function onImageClick(e) {
   if(!isImg) {
     return;
   }
+  //  відкривається велике зображення_______________
 
   const imgEl = document.querySelector('.gallery__link');
   imgEl.href = e.target.dataset.source;
@@ -49,14 +50,13 @@ function onImageClick(e) {
     <img class="modal__image" src="assets/images/image.png" width="800" height="600">
     `);
 
-    instance.show();
+  instance.show();
 
   const modalEl = document.querySelector('.modal__image');
   modalEl.src = e.target.dataset.source;
  //   console.log(modal.src);
 
   console.log(modalEl);
-
 }
 
 
