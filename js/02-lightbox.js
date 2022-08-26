@@ -36,7 +36,8 @@ function onImageClick(e) {
   if(!isImg) {
     return;
   }
+  
 
- 
+ new SimpleLightbox ('.galerry a', { })
 }
 
