@@ -1,8 +1,8 @@
 import { galleryItems } from './gallery-items.js';
+
 // Change code below this line
 
 console.log(galleryItems);
-
 
 const galleryContainer = document.querySelector('.gallery');
 const galleryImg = createGalleryImg(galleryItems);
@@ -36,8 +36,16 @@ function onImageClick(e) {
   if(!isImg) {
     return;
   }
-  
 
- new SimpleLightbox ('.galerry a', { })
+ new SimpleLightbox ('.gallery a', { 
+  nav: true,
+  caption: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+ });
+ 
 }
+
+
+
 

@@ -1,8 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-
-
 // 1. Створення і рендер розмітки__________________
 
 const galleryContainer = document.querySelector('.gallery');
@@ -39,7 +37,6 @@ function onImageClick(e) {
   if(!isImg) {
     return;
   }
-  //  відкривається велике зображення_______________
 
   const imgEl = document.querySelector('.gallery__link');
   imgEl.href = e.target.dataset.source;
@@ -52,13 +49,23 @@ function onImageClick(e) {
 
   instance.show();
   
-
   const modalEl = document.querySelector('.modal__image');
   modalEl.src = e.target.dataset.source;
- //   console.log(modal.src);
+ 
+  // Закриття модалки по escape__________________________
 
-  console.log(modalEl);
+  window.addEventListener('keydown', closeModalEsc)
+
+  function closeModalEsc(e) {
+    const escCode = 'Escape';
+
+    if(e.code === escCode) {
+      instance.close();
+    }
+  }
 }
+
+
 
 
 
