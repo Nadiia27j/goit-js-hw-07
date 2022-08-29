@@ -57,9 +57,8 @@ function onImageClick(e) {
   window.addEventListener('keydown', closeModalEsc)
 
   function closeModalEsc(e) {
-    const escCode = 'Escape';
 
-    if(e.code === escCode) {
+    if(e.key === "Escape") {
       instance.close();
     }
   }
