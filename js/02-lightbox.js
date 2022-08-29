@@ -28,23 +28,17 @@ function createGalleryImg(galleryItems) {
     }).join("");
 };
 
-galleryContainer.addEventListener('click', onImageClick);
 
-function onImageClick(e) {
- const isImg = e.target.classList.contains('gallery__image');
- e.preventDefault();
-  if(!isImg) {
-    return;
-  }
-
- new SimpleLightbox ('.gallery a', { 
+new SimpleLightbox ('.gallery a', { 
   nav: true,
   caption: true,
   captionsData: 'alt',
   captionDelay: 250,
- });
+});
+
+SimpleLightbox();
  
-}
+
 
 
 
