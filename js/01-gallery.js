@@ -60,13 +60,15 @@ function onImageClick(e) {
 
     if(e.key === "Escape") {
       instance.close();
+
+      window.removeEventListener('keydown', closeModalEsc);
     }
   }
-
-
 };
 
-// const instance = basicLightbox.create(`
+
+
+//   const instance = basicLightbox.create(`
 //     <img class="modal__image" src="assets/images/image.png" width="800" height="600">
 //     `, {
 // onShow(){
@@ -76,9 +78,6 @@ function onImageClick(e) {
 // document.removeEventListener('keydown', closeModalEsc) 
 // }
 // });
-
-
-
 
 
 
