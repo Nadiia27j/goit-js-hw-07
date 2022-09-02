@@ -62,9 +62,20 @@ function onImageClick(e) {
       instance.close();
     }
   }
-}
 
 
+};
+
+// const instance = basicLightbox.create(`
+//     <img class="modal__image" src="assets/images/image.png" width="800" height="600">
+//     `, {
+// onShow(){
+// document.addEventListener('keydown', closeModalEsc)
+// },
+// onClose(){
+// document.removeEventListener('keydown', closeModalEsc) 
+// }
+// });
 
 
 
